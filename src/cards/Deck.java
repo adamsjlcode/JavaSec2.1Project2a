@@ -13,7 +13,6 @@ package cards;
 
 import java.util.Random;
 
-// TODO: Auto-generated Javadoc
 /**
  * Simulate A Deck Of Cars
  * 
@@ -40,7 +39,7 @@ public class Deck
 	 */
 	public Deck ( )
 	{
-		deck = new Card[52]; //Create a Deck Of Cards
+		deck = new Card[52];
 		nextCard = 0;
 		for(int index = 0;index < 52;index++)
 		{
@@ -70,7 +69,7 @@ public class Deck
 	public int getNextCard ( )
 	{
 		return nextCard;
-	}//End getNextCard ( )
+	}//End etNextCard ( )
 	
 	/**
 	 * Shuffle.
@@ -107,32 +106,18 @@ public class Deck
 	/**
 	 * Deal a hand.
 	 *
-	 * @param n the n
 	 * @return the string
 	 */
-	public Hand dealAHand(int n)
+	public String dealAHand()
 	{
-		Hand hand = new Hand(n);//Create A Hand
-		for(int index = 0;index<n;index++)
+		String strHand = ""; //Holds The Players Hand
+		for(int index = 0;index<7;index++)
 		{
-			 hand.addCard (dealACard());
+			strHand +="\n"+dealACard().toString ( );
 		}
-		
-		return hand;
-	}//End dealAHand(int)
-	
-	/**
-	 * Cards left.
-	 *
-	 * @return the int
-	 */
-	public int cardsLeft()
-	{
-		int iLeft; 	//Cards Left In Deck
-		iLeft = 52 - nextCard;
-		return iLeft;
-	}
-	
+		return strHand;
+	}//End dealAHand()
+
 	/**
 	 * toString Method         
 	 * 
